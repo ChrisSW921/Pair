@@ -9,7 +9,7 @@ import CoreData
 
 class RandomizerController {
     
-    static var shared = RandomizerViewController()
+    static var shared = RandomizerController()
     
     var people: [Person] = []
     
@@ -26,11 +26,15 @@ class RandomizerController {
     func addPerson(name: String) {
         Person(name: name)
         CoreDataStack.saveContext()
+        fetchPeople()
+        //set up sections
     }
     
     func deletePerson(person: Person) {
         CoreDataStack.context.delete(person)
         CoreDataStack.saveContext()
+        //fetch
+        //set up sections
     }
     
     func randomize() {

@@ -10,7 +10,7 @@ import CoreData
 enum CoreDataStack {
     
     static let container: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "FinalAssessment")
+        let container = NSPersistentContainer(name: "Person")
         container.loadPersistentStores { (_, error) in
             if let error = error {
                 fatalError("Error loading persistent stores, \(error)")

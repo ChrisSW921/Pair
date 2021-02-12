@@ -13,10 +13,10 @@
 		FFFF485125D6DE7F002389AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFFF485025D6DE7F002389AE /* Assets.xcassets */; };
 		FFFF485425D6DE7F002389AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF485225D6DE7F002389AE /* LaunchScreen.storyboard */; };
 		FFFF486825D6DF33002389AE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486725D6DF33002389AE /* CoreDataStack.swift */; };
-		FFFF486C25D6DF74002389AE /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486A25D6DF74002389AE /* Person.xcdatamodeld */; };
 		FFFF486F25D6E0BD002389AE /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486E25D6E0BD002389AE /* RandomizerViewController.swift */; };
 		FFFF487225D6E10B002389AE /* RandomizerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF487125D6E10B002389AE /* RandomizerController.swift */; };
 		FFFF487525D6E18A002389AE /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF487425D6E18A002389AE /* Person+Convenience.swift */; };
+		FFFF487825D6E87C002389AE /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486A25D6DF74002389AE /* Person.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,10 +214,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFF486825D6DF33002389AE /* CoreDataStack.swift in Sources */,
+				FFFF487825D6E87C002389AE /* Person.xcdatamodeld in Sources */,
 				FFFF486F25D6E0BD002389AE /* RandomizerViewController.swift in Sources */,
 				FFFF484825D6DE7E002389AE /* AppDelegate.swift in Sources */,
 				FFFF487525D6E18A002389AE /* Person+Convenience.swift in Sources */,
-				FFFF486C25D6DF74002389AE /* Person.xcdatamodeld in Sources */,
 				FFFF487225D6E10B002389AE /* RandomizerController.swift in Sources */,
 				FFFF484A25D6DE7E002389AE /* SceneDelegate.swift in Sources */,
 			);

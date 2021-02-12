@@ -13,9 +13,41 @@ class RandomizerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        RandomizerController.shared.fetchPeople()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        RandomizerController.shared.fetchPeople()
+        tableView.reloadData()
+    }
+    
+    
+    @IBAction func addPerson(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Add person", message: "Add someone new to the list", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Add person here"
+        }
+        
+        let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let textField = alertController.textFields,
+                  let personName = textField[0].text, !personName.isEmpty else { return }
+            RandomizerController.shared.addPerson(name: personName)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(addAction)
+        present(alertController, animated: true)
+        
+        
+    }
+    
 
 }
 
@@ -26,11 +58,14 @@ extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return RandomizerController.shared.people.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
+        
+        cell.textLabel?.text = RandomizerController.shared.people[indexPath.row].name
+        
         return cell
     }
     
