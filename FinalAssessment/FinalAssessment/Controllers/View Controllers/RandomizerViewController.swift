@@ -16,13 +16,13 @@ class RandomizerViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         RandomizerController.shared.fetchPeople()
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        RandomizerController.shared.fetchPeople()
-        tableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        RandomizerController.shared.fetchPeople()
+//    }
     
     
     @IBAction func addPerson(_ sender: Any) {
@@ -37,6 +37,7 @@ class RandomizerViewController: UIViewController {
             guard let textField = alertController.textFields,
                   let personName = textField[0].text, !personName.isEmpty else { return }
             RandomizerController.shared.addPerson(name: personName)
+            self.tableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
@@ -45,10 +46,7 @@ class RandomizerViewController: UIViewController {
         alertController.addAction(addAction)
         present(alertController, animated: true)
         
-        
     }
-    
-
 }
 
 extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
@@ -69,5 +67,13 @@ extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let personToDelete = RandomizerController.shared.people[indexPath.row]
+            RandomizerController.shared.deletePerson(person: personToDelete)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        }
+    }
     
 }
