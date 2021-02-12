@@ -44,12 +44,6 @@ class RandomizerViewController: UIViewController {
         present(alertController, animated: true)
         
     }
-    
-    
-    @IBAction func randomizeButtonTapped(_ sender: Any) {
-        RandomizerController.shared.randomize()
-        tableView.reloadData()
-    }
 }
 
 //MARK: - Table View Extension
@@ -65,6 +59,35 @@ extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return RandomizerController.shared.sectionedPeople[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == (RandomizerController.shared.sectionedPeople.count - 1) {
+            return 60
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        if section == (RandomizerController.shared.sectionedPeople.count - 1) {
+            let footerView = UIView()
+            footerView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height:
+               60)
+            let button = UIButton()
+            button.frame = CGRect(x: 0, y: 0, width: footerView.frame.width, height: 50)
+            button.setTitle("Randomize", for: .normal)
+            button.setTitleColor(.blue, for: .normal)
+            button.backgroundColor = .lightGray
+            button.addTarget(self, action: #selector(randomize), for: .touchUpInside)
+            footerView.addSubview(button)
+            return footerView
+        }
+        return nil
+    }
+    
+    @objc func randomize() {
+        RandomizerController.shared.randomize()
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
