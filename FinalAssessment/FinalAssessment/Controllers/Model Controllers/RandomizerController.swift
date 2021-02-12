@@ -48,7 +48,7 @@ class RandomizerController {
             if pair.count == 2 {
                 sectionedPeople.append(pair)
                 pair = []
-                if person == people.last {
+                if person == randomizedPeople.last {
                     pair.append(person)
                     sectionedPeople.append(pair)
                     pair = []
@@ -56,7 +56,7 @@ class RandomizerController {
                     pair.append(person)
                 }
             }else {
-                if person == people.last {
+                if person == randomizedPeople.last {
                     pair.append(person)
                     sectionedPeople.append(pair)
                     pair = []

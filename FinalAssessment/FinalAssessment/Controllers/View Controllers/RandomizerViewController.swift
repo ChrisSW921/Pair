@@ -47,6 +47,14 @@ class RandomizerViewController: UIViewController {
         present(alertController, animated: true)
         
     }
+    
+    
+    @IBAction func randomizeButtonTapped(_ sender: Any) {
+        RandomizerController.shared.randomize()
+        tableView.reloadData()
+    }
+    
+    
 }
 
 extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
@@ -73,9 +81,9 @@ extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let personToDelete = RandomizerController.shared.people[indexPath.row]
+            let personToDelete = RandomizerController.shared.sectionedPeople[indexPath.section][indexPath.row]
             RandomizerController.shared.deletePerson(person: personToDelete)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.reloadData()
             
         }
     }
