@@ -14,6 +14,9 @@
 		FFFF485425D6DE7F002389AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFFF485225D6DE7F002389AE /* LaunchScreen.storyboard */; };
 		FFFF486825D6DF33002389AE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486725D6DF33002389AE /* CoreDataStack.swift */; };
 		FFFF486C25D6DF74002389AE /* Person.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486A25D6DF74002389AE /* Person.xcdatamodeld */; };
+		FFFF486F25D6E0BD002389AE /* RandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF486E25D6E0BD002389AE /* RandomizerViewController.swift */; };
+		FFFF487225D6E10B002389AE /* RandomizerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF487125D6E10B002389AE /* RandomizerController.swift */; };
+		FFFF487525D6E18A002389AE /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFF487425D6E18A002389AE /* Person+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		FFFF485525D6DE7F002389AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFFF486725D6DF33002389AE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FFFF486B25D6DF74002389AE /* Person.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Person.xcdatamodel; sourceTree = "<group>"; };
+		FFFF486E25D6E0BD002389AE /* RandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerViewController.swift; sourceTree = "<group>"; };
+		FFFF487125D6E10B002389AE /* RandomizerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerController.swift; sourceTree = "<group>"; };
+		FFFF487425D6E18A002389AE /* Person+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		FFFF486225D6DEAD002389AE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FFFF486E25D6E0BD002389AE /* RandomizerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 		FFFF486325D6DEB2002389AE /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FFFF487125D6E10B002389AE /* RandomizerController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 			children = (
 				FFFF486725D6DF33002389AE /* CoreDataStack.swift */,
 				FFFF486A25D6DF74002389AE /* Person.xcdatamodeld */,
+				FFFF487425D6E18A002389AE /* Person+Convenience.swift */,
 			);
 			path = "Extensions and Helpers";
 			sourceTree = "<group>";
@@ -205,8 +214,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFF486825D6DF33002389AE /* CoreDataStack.swift in Sources */,
+				FFFF486F25D6E0BD002389AE /* RandomizerViewController.swift in Sources */,
 				FFFF484825D6DE7E002389AE /* AppDelegate.swift in Sources */,
+				FFFF487525D6E18A002389AE /* Person+Convenience.swift in Sources */,
 				FFFF486C25D6DF74002389AE /* Person.xcdatamodeld in Sources */,
+				FFFF487225D6E10B002389AE /* RandomizerController.swift in Sources */,
 				FFFF484A25D6DE7E002389AE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

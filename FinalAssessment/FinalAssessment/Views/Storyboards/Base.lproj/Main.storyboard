@@ -11,7 +11,7 @@
         <!--Pair Randomizer-->
         <scene sceneID="ujS-Mc-T9e">
             <objects>
-                <viewController id="Dzz-k6-lHM" sceneMemberID="viewController">
+                <viewController id="Dzz-k6-lHM" customClass="RandomizerViewController" customModule="FinalAssessment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ek-69-hFb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +49,9 @@
                     <navigationItem key="navigationItem" title="Pair Randomizer" id="z4g-YV-sId">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="SyD-Np-4dp"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="sew-pB-wxY" id="asb-MX-tmb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Z6-w1-NnP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
