@@ -65,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				FFFF486625D6DF26002389AE /* Extensions and Helpers */,
-				FFFF486125D6DEA8002389AE /* Models */,
 				FFFF486025D6DEA4002389AE /* Controllers */,
 				FFFF485F25D6DEA0002389AE /* Views */,
 				FFFF485C25D6DE8C002389AE /* Resources */,
@@ -99,13 +98,6 @@
 				FFFF486225D6DEAD002389AE /* View Controllers */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FFFF486125D6DEA8002389AE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		FFFF486225D6DEAD002389AE /* View Controllers */ = {

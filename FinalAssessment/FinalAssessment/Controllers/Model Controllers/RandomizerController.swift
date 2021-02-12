@@ -9,6 +9,7 @@ import CoreData
 
 class RandomizerController {
     
+    //MARK: - Properties
     static var shared = RandomizerController()
     
     var people: [Person] = []
@@ -20,6 +21,7 @@ class RandomizerController {
          return request
      }()
     
+    //MARK: - Methods
     func fetchPeople() {
         people = (try? CoreDataStack.context.fetch(fetchRequest)) ?? []
         randomize()
@@ -29,21 +31,19 @@ class RandomizerController {
         Person(name: name)
         CoreDataStack.saveContext()
         fetchPeople()
-        //set up sections
     }
     
     func deletePerson(person: Person) {
         CoreDataStack.context.delete(person)
         CoreDataStack.saveContext()
         fetchPeople()
-        //set up sections
     }
     
     func randomize() {
         let randomizedPeople = people.shuffled()
         sectionedPeople = []
         var pair: [Person] = []
-        
+
         for person in randomizedPeople {
             if pair.count == 2 {
                 sectionedPeople.append(pair)
@@ -69,18 +69,5 @@ class RandomizerController {
         if pair.count > 0 {
             sectionedPeople.append(pair)
         }
-        
-//        print(sectionedPeople.count)
-//        for item in sectionedPeople {
-//            print(item)
-//            for item in item {
-//                print(item.name)
-//            }
-//            print(item.count)
-//        }
-        
-    }
-    
-    
-    
+    } 
 }

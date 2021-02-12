@@ -9,22 +9,19 @@ import UIKit
 
 class RandomizerViewController: UIViewController {
 
+    //MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         RandomizerController.shared.fetchPeople()
         tableView.reloadData()
-        // Do any additional setup after loading the view.
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        RandomizerController.shared.fetchPeople()
-//    }
-    
-    
+    //MARK: - Actions
     @IBAction func addPerson(_ sender: Any) {
         
         let alertController = UIAlertController(title: "Add person", message: "Add someone new to the list", preferredStyle: .alert)
@@ -53,10 +50,9 @@ class RandomizerViewController: UIViewController {
         RandomizerController.shared.randomize()
         tableView.reloadData()
     }
-    
-    
 }
 
+//MARK: - Table View Extension
 extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,5 +83,4 @@ extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-    
 }
