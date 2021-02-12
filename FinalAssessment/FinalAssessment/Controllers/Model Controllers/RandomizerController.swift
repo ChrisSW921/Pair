@@ -40,10 +40,11 @@ class RandomizerController {
     }
     
     func randomize() {
+        let randomizedPeople = people.shuffled()
         sectionedPeople = []
         var pair: [Person] = []
         
-        for person in people {
+        for person in randomizedPeople {
             if pair.count == 2 {
                 sectionedPeople.append(pair)
                 pair = []
@@ -68,14 +69,15 @@ class RandomizerController {
         if pair.count > 0 {
             sectionedPeople.append(pair)
         }
-        print(sectionedPeople.count)
-        for item in sectionedPeople {
-            print(item)
-            for item in item {
-                print(item.name)
-            }
-            print(item.count)
-        }
+        
+//        print(sectionedPeople.count)
+//        for item in sectionedPeople {
+//            print(item)
+//            for item in item {
+//                print(item.name)
+//            }
+//            print(item.count)
+//        }
         
     }
     

@@ -52,17 +52,21 @@ class RandomizerViewController: UIViewController {
 extension RandomizerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return RandomizerController.shared.sectionedPeople.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Group \(section + 1)"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RandomizerController.shared.people.count
+        return RandomizerController.shared.sectionedPeople[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         
-        cell.textLabel?.text = RandomizerController.shared.people[indexPath.row].name
+        cell.textLabel?.text = RandomizerController.shared.sectionedPeople[indexPath.section][indexPath.row].name
         
         return cell
     }
